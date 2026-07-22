@@ -1,0 +1,37 @@
+{
+  "taskId": "019f8a4f-a7cc-712b-b8ca-be976db20735",
+  "todos": [
+    {
+      "id": "72d3c79d5ab5d788be01536a77efea3e",
+      "content": "读取翻译文件 en.json 和 zh.json",
+      "status": "completed"
+    },
+    {
+      "id": "0e5ba226051add215e9ee251f6e8a504",
+      "content": "读取 handlers.v 和 main.v 了解翻译加载逻辑",
+      "status": "completed"
+    },
+    {
+      "id": "ed5118f357826aa284e18125550f09c2",
+      "content": "读取 wbapi.v 了解 API 调用中的语言参数",
+      "status": "completed"
+    },
+    {
+      "id": "f9404ce1009d52cf9cbb8cbc91617875",
+      "content": "读取模板文件 templates/index.html",
+      "status": "completed"
+    },
+    {
+      "id": "c93c7fc0d2b8cceb11ce53e5468e6cbe",
+      "content": "将翻译文件从 JSON 格式转换为纯文本格式 (key=value)",
+      "status": "in_progress"
+    },
+    {
+      "id": "c27787b0fede946521437f7378c1a870",
+      "content": "验证修复",
+      "status": "pending"
+    }
+  ],
+  "lastUpdated": 1784732605497,
+  "status": "active"
+}

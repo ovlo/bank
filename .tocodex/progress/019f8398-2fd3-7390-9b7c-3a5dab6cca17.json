@@ -1,0 +1,77 @@
+{
+  "taskId": "019f8398-2fd3-7390-9b7c-3a5dab6cca17",
+  "todos": [
+    {
+      "id": "51ebbf8a0d39abeb283f8c84e93598c9",
+      "content": "设计方案讨论与确认",
+      "status": "completed"
+    },
+    {
+      "id": "4978e8f8b99a7d58f4e6836502c24bb8",
+      "content": "创建项目目录结构和 v.mod",
+      "status": "completed"
+    },
+    {
+      "id": "85e2afdf9e6cb1a672f5215fdd5723b7",
+      "content": "实现 models.v - 数据模型",
+      "status": "completed"
+    },
+    {
+      "id": "7cef7cb2ba9549fc9e510744e1885249",
+      "content": "实现 wbapi.v - 世界银行 API 客户端",
+      "status": "completed"
+    },
+    {
+      "id": "f4ee0d0d51128690cd545657b3264645",
+      "content": "实现 handlers.v - HTTP 路由 + 处理",
+      "status": "completed"
+    },
+    {
+      "id": "fc2282e88c21f21b67e3f9b7933cf1a5",
+      "content": "实现 main.v - 入口文件 + SQLite 缓存",
+      "status": "completed"
+    },
+    {
+      "id": "5ee9204d9c26c56445ef932915ed1734",
+      "content": "创建翻译文件 translations/en.json 和 translations/zh.json",
+      "status": "completed"
+    },
+    {
+      "id": "38f82f476770979f6794a3d06ed4e354",
+      "content": "创建主页面模板 templates/index.html",
+      "status": "completed"
+    },
+    {
+      "id": "47c648effda7d6382708aa4885318c5f",
+      "content": "创建前端样式 static/style.css",
+      "status": "completed"
+    },
+    {
+      "id": "36e61b962a757f1a3858e84996d44f72",
+      "content": "创建前端交互 static/app.js",
+      "status": "completed"
+    },
+    {
+      "id": "e4e2c007e74769bfba22bbc7594b4bc2",
+      "content": "清理编译警告 + 测试启动",
+      "status": "completed"
+    },
+    {
+      "id": "2f741513bbb9ef50f7fa4a095bca9623",
+      "content": "编制文档",
+      "status": "completed"
+    },
+    {
+      "id": "7244ffec79fa752c1a2e279388fdcbc5",
+      "content": "自定义添加国家/指标的 UI",
+      "status": "completed"
+    },
+    {
+      "id": "01e34ce0208d46a78b36fd738c7f86e8",
+      "content": "后端增强：区域/收入组分类 + WB API 搜索 + 缓存预热",
+      "status": "completed"
+    }
+  ],
+  "lastUpdated": 1784620998066,
+  "status": "active"
+}

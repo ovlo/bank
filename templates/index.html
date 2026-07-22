@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="@current_lang">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>@page_title</title>
+	<link rel="stylesheet" href="/style.css">
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+</head>
+<body>
+	<!-- ==================== 顶部导航 ==================== -->
+	<header>
+		<div class="header-inner">
+			<h1 class="logo">@page_title</h1>
+			<nav>
+				<a href="/" class="nav-link">@nav_home</a>
+				<span class="nav-link nav-cat-link" onclick="scrollToCategories()">@nav_categories</span>
+				<span class="nav-link nav-search-link" onclick="focusSearch()">@nav_search</span>
+			</nav>
+			<div class="lang-switcher">
+				<select id="lang-select" onchange="switchLang(this.value)">
+					<option value="en" @lang_en_selected>English</option>
+					<option value="zh" @lang_zh_selected>中文</option>
+				</select>
+			</div>
+		</div>
+	</header>
+
+	<main class="main-layout">
+
+		<!-- ==================== 右侧主内容区 ==================== -->
+		<section class="content">
+			<!-- ==================== 🌍 世界概览看板 ==================== -->
+			<div id="overview-section" class="overview-section">
+				<h2 class="section-title">🌍 @overview_title</h2>
+				<p class="section-subtitle">@overview_subtitle</p>
+
+				<!-- 区域选择标签 -->
+				<div id="region-tabs" class="region-tabs"></div>
+
+				<!-- 概览指标卡片 -->
+				<div id="overview-cards" class="overview-cards">
+					<div class="loading-spinner-mini"></div>
+					<span style="color:var(--text-light);font-size:0.9rem;">@loading</span>
+				</div>
+
+				<!-- 概览对比图表 -->
+				<div id="overview-chart-container" class="overview-chart" style="display:none;">
+					<h3>@overview_chart_title</h3>
+					<canvas id="overview-chart"></canvas>
+				</div>
+
+				<hr class="section-divider">
+			</div>
+
+		</section>
+
+		<!-- ==================== 右侧面板 ==================== -->
+		<aside class="sidebar">
+			<div class="search-box">
+				<input type="text" id="search-input" placeholder="@search_placeholder" oninput="onSearchInput(this.value)">
+				<button onclick="doSearch()">@btn_search</button>
+			</div>
+			<div id="search-results" class="search-results" style="display:none;"></div>
+
+			<div class="sidebar-section-title">@label_country</div>
+			<input type="text" id="country-filter" placeholder="@country_filter" oninput="filterCountries(this.value)">
+			<select id="country-select" class="sidebar-select" multiple size="6"></select>
+
+			<div class="sidebar-section-title">@label_indicator</div>
+			<select id="indicator-select" class="sidebar-select" size="6">
+				<option value="">@select_indicator</option>
+			</select>
+
+			<div class="sidebar-section-title">@label_year_range</div>
+			<div class="year-inputs">
+				<input type="number" id="year-start" value="2000" min="1960" max="2025" placeholder="@label_year_start">
+				<input type="number" id="year-end" value="2023" min="1960" max="2025" placeholder="@label_year_end">
+			</div>
+			<button class="btn-primary sidebar-load-btn" onclick="loadData()">@btn_load_data</button>
+
+			<hr class="sidebar-divider">
+
+			<div class="sidebar-tabs">
+				<button class="sidebar-tab active" data-tab="preset" onclick="switchSidebarTab('preset')">@nav_categories</button>
+				<button class="sidebar-tab" data-tab="custom" onclick="switchSidebarTab('custom')">@tab_custom</button>
+			</div>
+
+			<div id="sidebar-preset" class="sidebar-panel">
+				<ul class="category-list" id="category-list"></ul>
+			</div>
+
+			<div id="sidebar-custom" class="sidebar-panel" style="display:none;">
+				<div class="custom-indicator-form">
+					<input type="text" id="custom-ind-id" placeholder="@custom_indicator_id">
+					<input type="text" id="custom-ind-name" placeholder="@custom_indicator_name">
+					<button class="btn-sm btn-add" onclick="addCustomIndicator()">@add_indicator</button>
+				</div>
+				<ul class="category-list" id="custom-list"></ul>
+			</div>
+		</aside>
+
+			<div id="welcome-message" class="welcome-message" style="display:none;">
+				<h2>@select_category</h2>
+				<p>@nav_search</p>
+			</div>
+
+			<div id="loading-indicator" class="loading-indicator" style="display:none;">
+				<div class="spinner"></div>
+				<span>@loading</span>
+			</div>
+
+			<div id="error-message" class="error-message" style="display:none;"></div>
+
+			<div id="data-display" class="data-display" style="display:none;">
+				<div class="chart-container">
+					<h3>@chart_title</h3>
+					<div class="chart-toolbar">
+						<button class="btn-sm" onclick="toggleChartType()" id="chart-type-btn">@bar_chart</button>
+						<button class="btn-sm" onclick="exportCsv()">@export_csv</button>
+					</div>
+					<canvas id="data-chart"></canvas>
+				</div>
+
+				<div class="table-container">
+					<h3>@table_title</h3>
+					<div class="table-toolbar">
+						<label>@label_sort_by:
+							<select id="sort-select" onchange="sortTable()">
+								<option value="year-asc">@label_year (@ascending)</option>
+								<option value="year-desc">@label_year (@descending)</option>
+								<option value="value-asc">@label_value (@ascending)</option>
+								<option value="value-desc">@label_value (@descending)</option>
+							</select>
+						</label>
+					</div>
+					<table id="data-table">
+						<thead>
+							<tr>
+								<th onclick="sortTable('year')">@label_year</th>
+								<th onclick="sortTable('value')">@label_value</th>
+							</tr>
+						</thead>
+						<tbody id="table-body">
+							<tr><td colspan="2">@no_data</td></tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer>
+		<p>@page_title — @nav_home</p>
+	</footer>
+
+	<script>
+		window.CATEGORIES_DATA = @categories_json;
+	</script>
+	<script src="/app.js"></script>
+</body>
+</html>

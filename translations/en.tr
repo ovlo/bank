@@ -1,0 +1,114 @@
+app_title
+World Bank Data Explorer
+-----
+nav_home
+Home
+-----
+nav_categories
+Categories
+-----
+nav_search
+Search
+-----
+search_placeholder
+Search by indicator name
+-----
+search
+Search
+-----
+load_data
+Load Data
+-----
+country
+Country
+-----
+indicator
+Indicator
+-----
+year_range
+Year Range
+-----
+year_start
+Year Start
+-----
+year_end
+Year End
+-----
+sort_by
+Sort By
+-----
+year
+Year
+-----
+value
+Value
+-----
+no_data
+No Data
+-----
+loading
+Loading...
+-----
+error
+Error
+-----
+table_title
+Data Table
+-----
+chart_title
+Chart
+-----
+select_country
+Select Country
+-----
+select_indicator
+Select Indicator
+-----
+select_category
+Select Category
+-----
+ascending
+Ascending
+-----
+descending
+Descending
+-----
+chart_type
+Chart Type
+-----
+line_chart
+Line Chart
+-----
+bar_chart
+Bar Chart
+-----
+export_csv
+Export CSV
+-----
+country_filter
+Country Filter
+-----
+custom_indicator
+Custom Indicator
+-----
+custom_indicator_id
+Indicator ID
+-----
+custom_indicator_name
+Indicator Name
+-----
+add_indicator
+Add Indicator
+-----
+tab_custom
+Custom
+-----
+overview_title
+World Overview
+-----
+overview_subtitle
+Key World Indicators
+-----
+overview_chart_title
+Overview Chart
+-----
