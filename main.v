@@ -80,11 +80,11 @@ fn main() {
 	}
 
 	mut server := http.Server{
-		addr: ':8080'
+		addr: ':3003'
 		handler: app
 		show_startup_message: true
 	}
 
-	println('[wb] World Bank Data Explorer starting on http://localhost:8080/')
+	println('[wbde] World Bank Data Explorer starting on http://localhost:3003/')
 	server.listen_and_serve()
 }

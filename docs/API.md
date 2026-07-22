@@ -7,7 +7,7 @@ World Bank Data Explorer 后端 API 文档。
 ## 基础 URL
 
 ```
-http://localhost:8080
+http://localhost:3003
 ```
 
 ## 通用说明
@@ -47,7 +47,7 @@ GET /set-lang?lang=en|zh
 
 **示例**:
 ```bash
-curl -v http://localhost:8080/set-lang?lang=zh
+curl -v http://localhost:3003/set-lang?lang=zh
 ```
 
 ---
@@ -176,7 +176,7 @@ GET /api/search?q=gdp
 
 **示例**:
 ```bash
-curl "http://localhost:8080/api/search?q=inflation"
+curl "http://localhost:3003/api/search?q=inflation"
 ```
 
 ---
