@@ -258,6 +258,10 @@ function initCategories() {
 		li.dataset.catId = cat.id;
 		list.appendChild(li);
 	});
+
+	if (cats.length > 0) {
+		selectCategory(cats[0].id);
+	}
 }
 
 function selectCategory(catId) {
